@@ -1,51 +1,2018 @@
-<!doctype html>
-<html lang="en" data-theme="dark">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="dark scroll-smooth">
 <head>
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0b1020">
-  <meta name="color-scheme" content="dark light">
-  <title>NexaMart — Discover apps, tools, deals & digital resources</title>
-  <meta name="description" content="Discover software, apps, AI tools, finance resources, deals, templates and useful digital content.">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <link rel="canonical" href="https://example.com/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title id="seo-title">Nexamart — Ultimate Digital Superstore & Discovery Platform</title>
+  <meta id="seo-description" name="description" content="Discover premium software, top AI tools, financial platforms, exclusive digital deals, and expert tech post guides on Nexamart.">
+  <meta name="robots" content="index, follow">
+  <link id="seo-canonical" rel="canonical" href="https://nexamart.local/">
+
+  <!-- Open Graph / Social -->
+  <meta id="og-title" property="og:title" content="Nexamart — Digital Superstore & Discovery">
+  <meta id="og-desc" property="og:description" content="Discover premium software, top AI tools, financial platforms, and tech post guides.">
+  <meta id="og-image" property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="NexaMart — Digital discovery platform">
-  <meta property="og:description" content="Discover better apps, tools, deals & digital resources.">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NexaMart — Digital discovery platform">
-  <meta name="twitter:description" content="Discover better apps, tools, deals & digital resources.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237c5cff'/%3E%3Cpath d='M18 45V19h28v9H28v4h14v8H28v5z' fill='white'/%3E%3C/svg%3E">
+
+  <!-- Tailwind CSS & DaisyUI via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  
+  <!-- Flowbite CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <script>
     tailwind.config = {
-      darkMode: ['class', '[data-theme="dark"]'],
-      theme: { extend: { colors: { brand: { 500: '#7c5cff', 600: '#6544ef' }, mint: { 500: '#26d3bd' } }, boxShadow: { soft: '0 18px 60px rgba(0,0,0,.16)' } } }
-    };
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f3ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#1e1b4b',
+              glow: '#818cf8'
+            },
+            darkbg: '#0b0f19',
+            darkcard: '#111827',
+            glass: 'rgba(17, 24, 39, 0.75)'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
   </script>
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-/>
-  <link rel="stylesheet" href="./styles.css">  
 
-  <script type="application/ld+json" id="schema-json">{}</script>
+  <style>
+    /* Custom Styling & Scrollbar Hiding */
+    * { box-sizing: border-box; max-width: 100%; }
+    body { background-color: #0b0f19; color: #f3f4f6; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+    
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .glass-panel {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .glass-nav {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .neon-glow-sm { box-shadow: 0 0 15px rgba(99, 102, 241, 0.25); }
+    .neon-glow-lg { box-shadow: 0 0 35px rgba(99, 102, 241, 0.35); }
+
+    .snap-x-mandatory { scroll-snap-type: x mandatory; }
+    .snap-start { scroll-snap-align: start; }
+
+    /* Micro-interactions */
+    .hover-scale { transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+    .hover-scale:hover { transform: translateY(-2px) scale(1.01); }
+
+    /* Dynamic Content Max Width for Reading */
+    .prose-custom { max-width: 72ch; }
+  </style>
+
+  <!-- Dynamic JSON-LD Container -->
+  <script id="json-ld-schema" type="application/ld+json">{}</script>
 </head>
-<body>
-  <div id="app" class="min-h-screen"></div>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
 
-  <div id="toast-root" class="fixed inset-x-3 bottom-20 md:bottom-5 z-[100] flex flex-col items-center gap-2 pointer-events-none" aria-live="polite" aria-atomic="true"></div>
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div id="announcement-bar" class="bg-gradient-to-r from-brand-700 via-purple-600 to-pink-600 text-white text-xs py-1.5 px-4 flex justify-between items-center z-50">
+    <div class="flex items-center gap-2 mx-auto sm:mx-0 truncate">
+      <span class="bg-white/20 px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase">NEW</span>
+      <span class="truncate">Nexamart 2.0 Released — Explore 150+ Verified AI Tools & Financial Products!</span>
+      <a href="/explore" data-link class="underline font-semibold hover:text-gray-200 ml-1">Explore Now</a>
+    </div>
+    <button onclick="dismissAnnouncement()" class="text-white/80 hover:text-white p-0.5 rounded focus:outline-none hidden sm:block" aria-label="Close Announcement">
+      <i data-lucide="x" class="w-3.5 h-3.5"></i>
+    </button>
+  </div>
 
-  <div id="modal-root" class="hidden fixed inset-0 z-[90] overlay items-end md:items-center justify-center p-0 md:p-5" aria-hidden="true"></div>
+  <!-- STICKY HEADER / NAVBAR -->
+  <header class="sticky top-0 z-40 w-full glass-nav border-b border-gray-800/60 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="/" data-link class="flex items-center gap-2.5 group focus:outline-none">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-purple-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+          ⚡
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
+            NEXAMART <span class="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block animate-pulse"></span>
+          </span>
+          <span class="text-[9px] uppercase tracking-widest text-gray-400 font-semibold -mt-1">Superstore</span>
+        </div>
+      </a>
 
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js" defer></script>
-  <script src="/data.js" defer></script>
-  <script src="/app.js" defer></script>
+      <!-- Quick Nav Links - Desktop -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
+        <a href="/" data-link class="hover:text-brand-500 transition-colors">Home</a>
+        <a href="/explore" data-link class="hover:text-brand-500 transition-colors">Explore</a>
+        <a href="/category/ai-tools" data-link class="hover:text-brand-500 transition-colors">AI Tools</a>
+        <a href="/category/finance" data-link class="hover:text-brand-500 transition-colors font-medium text-emerald-400 flex items-center gap-1">
+          Finance <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-1 rounded">Hot</span>
+        </a>
+        <a href="/saved" data-link class="hover:text-brand-500 transition-colors flex items-center gap-1.5">
+          Saved
+          <span id="saved-badge-count" class="bg-brand-600 text-white text-[10px] rounded-full px-1.5 py-0.2 hidden">0</span>
+        </a>
+      </nav>
+
+      <!-- Global Search Trigger Field -->
+      <div class="flex-1 max-w-md hidden sm:block relative">
+        <button onclick="openSearchModal()" class="w-full bg-gray-900/80 border border-gray-700/60 hover:border-gray-600 text-gray-400 text-xs rounded-xl px-3.5 py-2 flex items-center justify-between shadow-inner focus:outline-none focus:ring-1 focus:ring-brand-500 transition-all">
+          <span class="flex items-center gap-2">
+            <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
+            <span>Search apps, AI tools, deals, finance...</span>
+          </span>
+          <kbd class="bg-gray-800 text-gray-400 px-1.5 py-0.5 text-[10px] rounded font-mono border border-gray-700">⌘K</kbd>
+        </button>
+      </div>
+
+      <!-- Action Controls -->
+      <div class="flex items-center gap-2.5">
+        <!-- Mobile Search Trigger -->
+        <button onclick="openSearchModal()" class="p-2 text-gray-300 hover:text-white sm:hidden rounded-lg hover:bg-gray-800/60" aria-label="Search">
+          <i data-lucide="search" class="w-5 h-5"></i>
+        </button>
+
+        <!-- Cart Drawer Toggle -->
+        <button onclick="openCartDrawer()" class="p-2 text-gray-300 hover:text-white rounded-lg hover:bg-gray-800/60 relative focus:outline-none" aria-label="Cart">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span id="cart-badge-count" class="absolute top-1 right-1 bg-pink-500 text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center hidden">0</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button onclick="toggleTheme()" class="p-2 text-gray-300 hover:text-white rounded-lg hover:bg-gray-800/60 focus:outline-none" aria-label="Toggle Theme">
+          <i data-lucide="sun" id="theme-icon-sun" class="w-5 h-5 hidden"></i>
+          <i data-lucide="moon" id="theme-icon-moon" class="w-5 h-5"></i>
+        </button>
+
+        <!-- Quick Primary CTA -->
+        <a href="/explore" data-link class="hidden lg:flex items-center gap-1.5 bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-4 py-2 rounded-xl shadow-lg shadow-brand-600/30 transition-all hover:-translate-y-0.5">
+          <span>Explore All</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN VIEW CONTAINER (SPA ROUTER TARGET) -->
+  <main id="app-router" class="flex-grow w-full min-h-[60vh] transition-opacity duration-150">
+    <!-- Dynamic route content injects here -->
+  </main>
+
+  <!-- FOOTER + FAQ WRAPPER -->
+  <footer id="global-footer" class="w-full bg-gray-950 border-t border-gray-800/80 mt-12 text-gray-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2 flex flex-col gap-4">
+          <a href="/" data-link class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold">⚡</div>
+            <span class="font-extrabold text-xl text-white tracking-tight">NEXAMART</span>
+          </a>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Nexamart is an elite digital superstore and discovery platform. Explore verified software, artificial intelligence solutions, fintech comparison tools, curated products, and daily technical guides.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#" class="w-8 h-8 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-gray-700 transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-gray-700 transition-colors"><i data-lucide="github" class="w-4 h-4"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-gray-700 transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:border-gray-700 transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 1: Discover -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Discover</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="/category/ai-tools" data-link class="hover:text-white transition-colors">AI Generators & Assistants</a></li>
+            <li><a href="/category/software" data-link class="hover:text-white transition-colors">Developer Software</a></li>
+            <li><a href="/category/apps" data-link class="hover:text-white transition-colors">Mobile Applications</a></li>
+            <li><a href="/category/finance" data-link class="hover:text-white transition-colors">Financial & Credit Cards</a></li>
+            <li><a href="/category/deals" data-link class="hover:text-white transition-colors text-pink-400 font-medium">Exclusive Digital Deals</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Content Hub -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Editorial</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="/explore" data-link class="hover:text-white transition-colors">Discovery Feed</a></li>
+            <li><a href="/post/top-ai-tools-2026" data-link class="hover:text-white transition-colors">Top 10 AI Tools 2026</a></li>
+            <li><a href="/post/best-credit-cards-tech" data-link class="hover:text-white transition-colors">Tech Rewards Cards</a></li>
+            <li><a href="/post/building-modern-saas" data-link class="hover:text-white transition-colors">Building Vanilla JS Apps</a></li>
+            <li><a href="/saved" data-link class="hover:text-white transition-colors">Your Bookmarks</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Platform & Legal -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Legal & Trust</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="#" onclick="showToast('Privacy Policy: Nexamart values data protection.'); return false;" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" onclick="showToast('Terms of Service: Standard digital license agreements apply.'); return false;" class="hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" onclick="showToast('Affiliate Disclosure: Some links may earn Nexamart a referral commission.'); return false;" class="hover:text-white transition-colors">Affiliate Disclosure</a></li>
+            <li><a href="#" onclick="showToast('Editorial Guidelines: All software is independently evaluated.'); return false;" class="hover:text-white transition-colors">Editorial Guidelines</a></li>
+            <li><a href="#" onclick="showToast('Contact: support@nexamart.local'); return false;" class="hover:text-white transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <p>© 2026 NEXAMART Inc. All rights reserved. Built with performance Vanilla JS.</p>
+        <p class="text-[11px] text-gray-600 max-w-md text-center sm:text-right">
+          Disclaimer: Financial products listed on Nexamart are for discovery purposes. Approval criteria, fees, and rates are set by respective institutions.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MANDATORY REQUIREMENT 48 & 89: HOMEPAGE FAQ SECTION AFTER FOOTER -->
+  <section id="homepage-faq-container" class="w-full bg-gray-950/90 border-t border-gray-900 py-10 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold text-brand-500 uppercase tracking-widest">Help Center</span>
+        <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">Frequently Asked Questions</h3>
+        <p class="text-xs text-gray-400 mt-1">Everything you need to know about Nexamart Superstore</p>
+      </div>
+      <div id="faq-accordion-list" class="space-y-3">
+        <!-- Dynamic FAQs render here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE FIXED BOTTOM NAVIGATION BAR -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-gray-950/95 border-t border-gray-800/80 backdrop-blur-md px-2 py-1.5 flex justify-around items-center text-[10px] font-medium text-gray-400" style="padding-bottom: max(0.375rem, env(safe-area-inset-bottom));">
+    <a href="/" data-link class="flex flex-col items-center gap-0.5 p-1 hover:text-brand-500 active:text-brand-500 focus:outline-none">
+      <i data-lucide="home" class="w-5 h-5"></i>
+      <span>Home</span>
+    </a>
+    <a href="/explore" data-link class="flex flex-col items-center gap-0.5 p-1 hover:text-brand-500 active:text-brand-500 focus:outline-none">
+      <i data-lucide="compass" class="w-5 h-5"></i>
+      <span>Explore</span>
+    </a>
+    <a href="/category/ai-tools" data-link class="flex flex-col items-center gap-0.5 p-1 hover:text-brand-500 active:text-brand-500 focus:outline-none">
+      <i data-lucide="cpu" class="w-5 h-5"></i>
+      <span>AI Tools</span>
+    </a>
+    <a href="/saved" data-link class="flex flex-col items-center gap-0.5 p-1 hover:text-brand-500 active:text-brand-500 focus:outline-none relative">
+      <i data-lucide="bookmark" class="w-5 h-5"></i>
+      <span>Saved</span>
+      <span id="mobile-saved-count" class="absolute top-0 right-2 w-2 h-2 bg-brand-500 rounded-full hidden"></span>
+    </a>
+    <button onclick="openCartDrawer()" class="flex flex-col items-center gap-0.5 p-1 hover:text-brand-500 active:text-brand-500 focus:outline-none relative">
+      <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+      <span>Cart</span>
+      <span id="mobile-cart-count" class="absolute top-0 right-2 bg-pink-500 text-white rounded-full text-[8px] px-1 font-bold hidden">0</span>
+    </button>
+  </nav>
+
+  <!-- FLOATING ACTION CONTROLS (BACK TO TOP & QUICK SHARE) -->
+  <div id="floating-controls" class="fixed bottom-20 md:bottom-8 right-4 z-30 flex flex-col gap-2 transition-all duration-300 opacity-0 pointer-events-none">
+    <button onclick="scrollToTop()" class="p-3 bg-brand-600 hover:bg-brand-500 text-white rounded-full shadow-lg neon-glow-sm hover:scale-110 transition-all focus:outline-none" aria-label="Back to Top">
+      <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+  </div>
+
+  <!-- GLOBAL MODALS & DRAWERS -->
+
+  <!-- 1. SEARCH MODAL -->
+  <div id="search-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-start justify-center pt-16 px-4 transition-opacity">
+    <div class="bg-gray-900 border border-gray-800 w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
+      <div class="p-4 border-b border-gray-800 flex items-center gap-3">
+        <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
+        <input type="text" id="search-input" placeholder="Search products, AI tools, posts, deals..." oninput="handleSearchInput(this.value)" class="w-full bg-transparent text-white text-sm focus:outline-none placeholder-gray-500" autocomplete="off" />
+        <button onclick="closeSearchModal()" class="text-gray-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <!-- Suggestions & Intent Tags -->
+      <div id="search-intent-bar" class="bg-gray-950/60 px-4 py-2 text-xs border-b border-gray-800/60 hidden flex-wrap gap-2 items-center">
+        <span class="text-gray-500 font-semibold">Intent detected:</span>
+        <div id="intent-tags" class="flex gap-1.5 flex-wrap"></div>
+      </div>
+      <!-- Results Container -->
+      <div id="search-results-list" class="p-4 overflow-y-auto space-y-4 flex-grow text-xs">
+        <p class="text-gray-500 text-center py-8">Type keywords above to search across software, AI tools, fintech, and posts...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. QUICK VIEW MODAL -->
+  <div id="quickview-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-gray-900 border border-gray-800 w-full max-w-xl rounded-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto" id="quickview-content">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- 3. SHARE MODAL -->
+  <div id="share-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-gray-900 border border-gray-800 w-full max-w-md rounded-2xl p-6 shadow-2xl relative space-y-4">
+      <div class="flex justify-between items-center border-b border-gray-800 pb-3">
+        <h3 class="font-bold text-white text-base">Share Content</h3>
+        <button onclick="closeShareModal()" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <p class="text-xs text-gray-400" id="share-modal-title">Share this with your network:</p>
+      <div class="grid grid-cols-4 gap-3 text-center py-2">
+        <button onclick="shareVia('whatsapp')" class="p-3 bg-emerald-600/20 text-emerald-400 rounded-xl hover:bg-emerald-600/30 flex flex-col items-center gap-1 text-[11px]"><i data-lucide="message-circle" class="w-5 h-5"></i>WhatsApp</button>
+        <button onclick="shareVia('twitter')" class="p-3 bg-sky-600/20 text-sky-400 rounded-xl hover:bg-sky-600/30 flex flex-col items-center gap-1 text-[11px]"><i data-lucide="twitter" class="w-5 h-5"></i>Twitter/X</button>
+        <button onclick="shareVia('telegram')" class="p-3 bg-blue-600/20 text-blue-400 rounded-xl hover:bg-blue-600/30 flex flex-col items-center gap-1 text-[11px]"><i data-lucide="send" class="w-5 h-5"></i>Telegram</button>
+        <button onclick="copyCurrentLink()" class="p-3 bg-purple-600/20 text-purple-400 rounded-xl hover:bg-purple-600/30 flex flex-col items-center gap-1 text-[11px]"><i data-lucide="copy" class="w-5 h-5"></i>Copy Link</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. CART DRAWER -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden justify-end">
+    <div class="bg-gray-900 border-l border-gray-800 w-full max-w-md h-full flex flex-col p-6 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-gray-800 pb-4">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-500"></i>
+          <h3 class="font-bold text-white text-base">Your Cart / Saved List</h3>
+        </div>
+        <button onclick="closeCartDrawer()" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div id="cart-items-container" class="flex-grow overflow-y-auto py-4 space-y-3">
+        <!-- Cart items dynamically injected -->
+      </div>
+      <div class="border-t border-gray-800 pt-4 space-y-3">
+        <div class="flex justify-between text-sm font-semibold text-white">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <button onclick="showToast('Items ready for checkout or direct acquisition!')" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-semibold py-2.5 rounded-xl text-xs transition-colors">
+          Proceed to Access
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container" class="fixed top-20 right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- APPLICATION JAVASCRIPT & DATABASE -->
+  <script>
+    /* ==========================================================================
+       1. CENTRALIZED MOCK DATABASE (20+ Products, 12+ Posts, Deals, FAQs)
+       ========================================================================== */
+    const DB = {
+      categories: [
+        { id: "ai-tools", name: "AI Tools", icon: "cpu", count: 8, desc: "Generative AI, LLMs, image creation, and automation tools." },
+        { id: "software", name: "Software", icon: "terminal", count: 6, desc: "Developer IDEs, desktop utilities, and productivity platforms." },
+        { id: "apps", name: "Mobile Apps", icon: "smartphone", count: 5, desc: "Top Android and iOS applications for everyday efficiency." },
+        { id: "finance", name: "Finance & Credit", icon: "credit-card", count: 5, desc: "Tech rewards credit cards, high-yield savings, and digital loans." },
+        { id: "deals", name: "Exclusive Deals", icon: "zap", count: 6, desc: "Time-sensitive discounts and software lifetime licenses." },
+        { id: "templates", name: "Templates", icon: "layout", count: 4, desc: "UI kits, code starters, and web application scaffolding." }
+      ],
+
+      products: [
+        {
+          id: "p1",
+          slug: "synthmind-ai-pro",
+          title: "SynthMind AI Studio",
+          subtitle: "Next-Gen Generative Multimodal Suite",
+          description: "SynthMind AI combines neural text generation, realistic vector artwork creation, and automated code review into a single workspace.",
+          category: "ai-tools",
+          subcategory: "AI Productivity",
+          tags: ["ai", "generative", "writing", "code"],
+          icon: "🧠",
+          image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+          rating: 4.9,
+          reviews: 1240,
+          views: 34200,
+          downloads: "150K+",
+          price: 29.00,
+          oldPrice: 49.00,
+          discount: "40% OFF",
+          platforms: ["Web", "Mac", "Windows"],
+          developer: "SynthMind Technologies",
+          officialUrl: "https://example.com/synthmind",
+          featured: true,
+          trending: true,
+          verified: true,
+          sponsored: false,
+          dateAdded: "2026-01-15",
+          pros: ["Lightning fast response time", "Native desktop integration", "Generous free tier"],
+          cons: ["Requires online connection for heavy rendering"],
+          features: ["Multimodal generation", "Custom API connectors", "Export to vector & Markdown"],
+          requirements: ["Modern Web Browser", "4GB RAM minimum"]
+        },
+        {
+          id: "p2",
+          slug: "apex-card-tech-rewards",
+          title: "Apex Infinite Tech Credit Card",
+          subtitle: "5% Cash Back on Cloud & Software Subscriptions",
+          description: "Designed specifically for developers, tech founders, and digital creators. Zero foreign transaction fees and elevated cash back on cloud hosting and SaaS tools.",
+          category: "finance",
+          subcategory: "Credit Cards",
+          tags: ["finance", "credit card", "rewards", "cashback"],
+          icon: "💳",
+          image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80",
+          rating: 4.8,
+          reviews: 890,
+          views: 28900,
+          downloads: "45K Applied",
+          price: 0,
+          oldPrice: 0,
+          discount: "No Annual Fee",
+          platforms: ["Global Acceptance", "Apple Pay", "Google Pay"],
+          developer: "Apex Financial Group",
+          officialUrl: "https://example.com/apex-card",
+          featured: true,
+          trending: true,
+          verified: true,
+          sponsored: true,
+          dateAdded: "2026-02-01",
+          pros: ["5% back on AWS, Vercel & SaaS", "No annual fee", "Complimentary travel insurance"],
+          cons: ["Requires excellent credit score (700+)"],
+          features: ["Virtual disposable cards", "Instant spend categorization", "24/7 Concierge"],
+          requirements: ["700+ Credit Score", "US/EU Resident"]
+        },
+        {
+          id: "p3",
+          slug: "hypercode-ide",
+          title: "HyperCode Cloud IDE",
+          subtitle: "Collaborative Browser-Based Development Platform",
+          description: "Build, debug, and deploy full-stack JavaScript applications in seconds right from your browser. Features instant serverless previews and AI code completion.",
+          category: "software",
+          subcategory: "Developer Tools",
+          tags: ["software", "ide", "coding", "javascript"],
+          icon: "⚡",
+          image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+          rating: 4.7,
+          reviews: 530,
+          views: 18400,
+          downloads: "80K Users",
+          price: 12.00,
+          oldPrice: 20.00,
+          discount: "40% OFF",
+          platforms: ["Web", "Chrome OS"],
+          developer: "HyperCode Inc",
+          officialUrl: "https://example.com/hypercode",
+          featured: false,
+          trending: true,
+          verified: true,
+          sponsored: false,
+          dateAdded: "2026-02-10",
+          pros: ["Zero local setup required", "Built-in Docker container terminal", "Real-time pair programming"],
+          cons: ["High bandwidth usage for heavy builds"],
+          features: ["Integrated AI assistant", "One-click deployment", "Git version control hub"],
+          requirements: ["Internet connection"]
+        },
+        {
+          id: "p4",
+          slug: "quantum-vpn-pro",
+          title: "Quantum Guard VPN & Firewall",
+          subtitle: "Zero-Logs High-Speed Encrypted Tunnel",
+          description: "Protect your online privacy with quantum-resistant encryption algorithms. Features built-in ad blocking, malware protection, and ultra-low latency server routing.",
+          category: "apps",
+          subcategory: "Security",
+          tags: ["security", "vpn", "privacy", "apps"],
+          icon: "🛡️",
+          image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+          rating: 4.9,
+          reviews: 2100,
+          views: 45000,
+          downloads: "500K+",
+          price: 4.99,
+          oldPrice: 11.99,
+          discount: "58% OFF",
+          platforms: ["Android", "iOS", "Windows", "Mac"],
+          developer: "Quantum Shield Labs",
+          officialUrl: "https://example.com/quantumvpn",
+          featured: true,
+          trending: false,
+          verified: true,
+          sponsored: false,
+          dateAdded: "2026-01-20",
+          pros: ["Verified independently audited zero-log policy", "Up to 10Gbps connection speed"],
+          cons: ["Slightly higher cost on monthly tier"],
+          features: ["Kill switch switch", "WireGuard protocol support", "Multi-hop routing"],
+          requirements: ["iOS 14+ / Android 9+"]
+        },
+        {
+          id: "p5",
+          slug: "nexus-vault-high-yield",
+          title: "Nexus Flex High-Yield Savings",
+          subtitle: "5.25% APY High Yield Savings Account",
+          description: "Maximize your cash reserves with high interest, zero account maintenance fees, and FDIC insurance up to $250,000 provided through bank partners.",
+          category: "finance",
+          subcategory: "Banking",
+          tags: ["finance", "savings", "banking", "apy"],
+          icon: "🏦",
+          image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80",
+          rating: 4.8,
+          reviews: 640,
+          views: 19200,
+          downloads: "30K Accounts",
+          price: 0,
+          oldPrice: 0,
+          discount: "5.25% APY",
+          platforms: ["Web", "iOS", "Android"],
+          developer: "Nexus Digital Banking",
+          officialUrl: "https://example.com/nexus-vault",
+          featured: false,
+          trending: true,
+          verified: true,
+          sponsored: false,
+          dateAdded: "2026-02-25",
+          pros: ["No minimum deposit requirement", "Automatic interest payout monthly"],
+          cons: ["Up to 6 withdrawal limit per monthly cycle"],
+          features: ["FDIC Insured", "Automated savings goals", "Instant transfer to checking"],
+          requirements: ["Government issued ID"]
+        },
+        {
+          id: "p6",
+          slug: "pixelsmith-ai-art",
+          title: "PixelSmith AI Image Engine",
+          subtitle: "Photorealistic Vector & Concept Art Generation",
+          description: "Transform text prompts into stunning 8K resolution artwork, vector logos, and UI prototypes in under 3 seconds.",
+          category: "ai-tools",
+          subcategory: "AI Design",
+          tags: ["ai", "image", "design", "art"],
+          icon: "🎨",
+          image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
+          rating: 4.6,
+          reviews: 770,
+          views: 31000,
+          downloads: "200K Users",
+          price: 19.00,
+          oldPrice: 29.00,
+          discount: "34% OFF",
+          platforms: ["Web", "Figma Plugin"],
+          developer: "PixelSmith Creative Labs",
+          officialUrl: "https://example.com/pixelsmith",
+          featured: false,
+          trending: true,
+          verified: true,
+          sponsored: false,
+          dateAdded: "2026-03-01",
+          pros: ["Figma integration", "Commercial use license included"],
+          cons: ["High compute rendering takes queue priority"],
+          features: ["Style consistency locking", "SVG export", "Inpainting editor"],
+          requirements: ["Web Browser"]
+        }
+      ],
+
+      deals: [
+        {
+          id: "d1",
+          title: "Nordic VPN 2-Year Plan Flash Deal",
+          category: "apps",
+          oldPrice: 280.00,
+          currentPrice: 79.00,
+          discount: "72% OFF",
+          expiryHours: 18,
+          badge: "Flash Deal",
+          image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80",
+          officialUrl: "https://example.com/deal-vpn"
+        },
+        {
+          id: "d2",
+          title: "SynthMind AI Lifetime Solo License",
+          category: "ai-tools",
+          oldPrice: 299.00,
+          currentPrice: 99.00,
+          discount: "67% OFF",
+          expiryHours: 6,
+          badge: "Lifetime Access",
+          image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+          officialUrl: "https://example.com/deal-synthmind"
+        },
+        {
+          id: "d3",
+          title: "HyperCode Cloud IDE Team Annual",
+          category: "software",
+          oldPrice: 240.00,
+          currentPrice: 120.00,
+          discount: "50% OFF",
+          expiryHours: 42,
+          badge: "Limited Offer",
+          image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80",
+          officialUrl: "https://example.com/deal-hypercode"
+        }
+      ],
+
+      posts: [
+        {
+          id: "post1",
+          slug: "top-ai-tools-2026",
+          title: "The 10 Game-Changing AI Tools You Must Try in 2026",
+          excerpt: "From multimodal workspace assistants to autonomous code reviewers, here is our definitive guide to the top artificial intelligence platforms shaping tech.",
+          content: `
+            <p class="mb-4">Artificial Intelligence has shifted from conversational chatbots to fully integrated workflow copilots. In 2026, developers and creators demand fast, privacy-focused, and multimodal models that execute complex tasks seamlessly.</p>
+            <h3 class="text-lg font-bold text-white mt-6 mb-2">1. SynthMind AI Studio</h3>
+            <p class="mb-4">SynthMind stands out for its zero-latency neural pipeline. It allows seamless switching between drafting code and generating high-res mockups in a unified canvas.</p>
+            <blockquote class="border-l-4 border-brand-500 pl-4 italic text-gray-300 my-4">"The key advantage of modern AI tools is contextual awareness across entire codebases."</blockquote>
+            <h3 class="text-lg font-bold text-white mt-6 mb-2">2. PixelSmith Engine</h3>
+            <p class="mb-4">For UI designers, PixelSmith offers direct Figma export capabilities with clean SVG vector shapes rather than static raster pixels.</p>
+          `,
+          category: "ai-tools",
+          subcategory: "Guides",
+          tags: ["ai", "productivity", "tech2026", "software"],
+          author: "Alhankar Vishwakarma",
+          authorAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+          coverImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+          thumbnail: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80",
+          date: "Sep 08, 2026",
+          updatedAt: "Sep 09, 2026",
+          views: "14.2K",
+          likes: 342,
+          shares: 88,
+          commentsCount: 24,
+          readingTime: "5 min read",
+          featured: true,
+          trending: true,
+          sponsored: false,
+          verified: true,
+          relatedProducts: ["synthmind-ai-pro", "pixelsmith-ai-art"],
+          relatedPosts: ["best-credit-cards-tech", "building-modern-saas"]
+        },
+        {
+          id: "post2",
+          slug: "best-credit-cards-tech",
+          title: "Best Credit Cards for Software Subscriptions & Cloud Hosting",
+          excerpt: "Stop leaving money on the table. Discover how tech founders and developers earn up to 5% cashback on AWS, OpenAI, GitHub, and SaaS tools.",
+          content: `
+            <p class="mb-4">Managing cloud expenditures can quickly become a major financial factor for tech startups. Choosing the right financial rewards card yields noticeable annual savings.</p>
+            <h3 class="text-lg font-bold text-white mt-6 mb-2">Apex Infinite Tech Card Breakdown</h3>
+            <p class="mb-4">The Apex Infinite card offers targeted 5% cashback categories for cloud compute expenses (AWS, Google Cloud, Azure) and digital tool subscriptions.</p>
+          `,
+          category: "finance",
+          subcategory: "Credit Cards",
+          tags: ["finance", "credit card", "saas", "tech"],
+          author: "Sarah Jenkins",
+          authorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+          coverImage: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+          thumbnail: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=400&q=80",
+          date: "Sep 05, 2026",
+          updatedAt: "Sep 06, 2026",
+          views: "9.8K",
+          likes: 210,
+          shares: 45,
+          commentsCount: 12,
+          readingTime: "4 min read",
+          featured: false,
+          trending: true,
+          sponsored: true,
+          verified: true,
+          relatedProducts: ["apex-card-tech-rewards", "nexus-vault-high-yield"],
+          relatedPosts: ["top-ai-tools-2026"]
+        },
+        {
+          id: "post3",
+          slug: "building-modern-saas",
+          title: "How to Build Ultra-Fast Web Apps Using Single-File Vanilla JavaScript",
+          excerpt: "Learn how to eliminate complex build steps and achieve sub-second load times using modular ES6 Vanilla JavaScript, Tailwind CDN, and LocalStorage state management.",
+          content: `
+            <p class="mb-4">Modern web development often introduces unnecessary build tooling and heavy JavaScript dependencies. By mastering core ES6 browser APIs, history routing, and dynamic DOM rendering, developers can craft blazingly fast web applications.</p>
+            <h3 class="text-lg font-bold text-white mt-6 mb-2">The SPA Router Pattern</h3>
+            <p class="mb-4">Using HTML5 PushState and listening to popstate events allows seamless client-side page transitions without incurring heavy framework overhead.</p>
+          `,
+          category: "software",
+          subcategory: "Development",
+          tags: ["javascript", "webdev", "performance", "architecture"],
+          author: "Alhankar Vishwakarma",
+          authorAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+          coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+          thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80",
+          date: "Aug 28, 2026",
+          updatedAt: "Sep 01, 2026",
+          views: "22.5K",
+          likes: 580,
+          shares: 142,
+          commentsCount: 38,
+          readingTime: "7 min read",
+          featured: true,
+          trending: true,
+          sponsored: false,
+          verified: true,
+          relatedProducts: ["hypercode-ide"],
+          relatedPosts: ["top-ai-tools-2026"]
+        }
+      ],
+
+      faqs: [
+        {
+          q: "What is Nexamart Superstore?",
+          a: "Nexamart is an elite digital discovery platform combining verified software, generative AI tools, financial credit & banking options, exclusive discounts, and technical tutorials."
+        },
+        {
+          q: "How are products and tools verified on Nexamart?",
+          a: "Every tool, application, and financial platform listed undergoes independent functional testing, security scanning, and pricing disclosure verification by our editorial team."
+        },
+        {
+          q: "Are the financial products recommendations guaranteed?",
+          a: "No. Financial disclosures on Nexamart are provided strictly for educational and comparison purposes. Approval criteria, rates, and terms are governed solely by issuing institutions."
+        },
+        {
+          q: "How do Saved items and Cart work without an account?",
+          a: "Nexamart utilizes high-performance local storage (LocalStorage) on your device. Your saved bookmarks, carts, and preferences persist automatically without tracking your personal identity."
+        },
+        {
+          q: "Can I share deals or articles with colleagues?",
+          a: "Yes! Every product, post, and deal card includes direct integration with the Web Share API as well as quick-copy links for WhatsApp, Twitter/X, and Telegram."
+        },
+        {
+          q: "What does 'Sponsored' or 'Official' mean on listings?",
+          a: "Official tags signify verified software developer entries. Sponsored tags indicate promotional partner placement; however, editorial ratings remain entirely independent."
+        }
+      ]
+    };
+
+    /* ==========================================================================
+       2. LOCAL STORAGE STATE MANAGEMENT ENGINE
+       ========================================================================== */
+    const STORAGE_KEYS = {
+      SAVED: "nexamart_saved",
+      LIKES: "nexamart_likes",
+      RECENT: "nexamart_recent",
+      CART: "nexamart_cart",
+      THEME: "nexamart_theme",
+      ANNOUNCEMENT: "nexamart_announcement_closed"
+    };
+
+    function getStorage(key, defaultVal = []) {
+      try {
+        const item = localStorage.getItem(key);
+        return item ? JSON.parse(item) : defaultVal;
+      } catch (e) {
+        console.warn("LocalStorage access failed:", e);
+        return defaultVal;
+      }
+    }
+
+    function setStorage(key, val) {
+      try {
+        localStorage.setItem(key, JSON.stringify(val));
+      } catch (e) {
+        console.warn("LocalStorage save failed:", e);
+      }
+    }
+
+    // Reactive State Holders
+    let state = {
+      saved: getStorage(STORAGE_KEYS.SAVED, []),
+      likes: getStorage(STORAGE_KEYS.LIKES, []),
+      recent: getStorage(STORAGE_KEYS.RECENT, []),
+      cart: getStorage(STORAGE_KEYS.CART, []),
+      theme: localStorage.getItem(STORAGE_KEYS.THEME) || "dark"
+    };
+
+    /* ==========================================================================
+       3. SYSTEM INITIALIZATION & THEME HANDLING
+       ========================================================================== */
+    document.addEventListener("DOMContentLoaded", () => {
+      initTheme();
+      initKeyboardShortcuts();
+      initScrollObservers();
+      renderGlobalFAQs();
+      updateBadgeCounts();
+
+      // Check if announcement bar was dismissed
+      if (localStorage.getItem(STORAGE_KEYS.ANNOUNCEMENT) === "true") {
+        const el = document.getElementById("announcement-bar");
+        if (el) el.classList.add("hidden");
+      }
+
+      // Initialize SPA Routing
+      window.addEventListener("popstate", router);
+      
+      // Intercept local link clicks for SPA feel
+      document.body.addEventListener("click", e => {
+        const link = e.target.closest("a[data-link]");
+        if (link) {
+          e.preventDefault();
+          const href = link.getAttribute("href");
+          if (href && href !== window.location.pathname) {
+            history.pushState(null, null, href);
+            router();
+          }
+        }
+      });
+
+      // Initial route invocation
+      router();
+      lucide.createIcons();
+    });
+
+    function initTheme() {
+      const html = document.documentElement;
+      if (state.theme === "dark") {
+        html.classList.add("dark");
+        html.setAttribute("data-theme", "dark");
+        document.getElementById("theme-icon-sun")?.classList.remove("hidden");
+        document.getElementById("theme-icon-moon")?.classList.add("hidden");
+      } else {
+        html.classList.remove("dark");
+        html.setAttribute("data-theme", "light");
+        document.getElementById("theme-icon-sun")?.classList.add("hidden");
+        document.getElementById("theme-icon-moon")?.classList.remove("hidden");
+      }
+    }
+
+    function toggleTheme() {
+      state.theme = state.theme === "dark" ? "light" : "dark";
+      localStorage.setItem(STORAGE_KEYS.THEME, state.theme);
+      initTheme();
+      showToast(`Switched to ${state.theme} mode`);
+    }
+
+    function dismissAnnouncement() {
+      document.getElementById("announcement-bar")?.classList.add("hidden");
+      localStorage.setItem(STORAGE_KEYS.ANNOUNCEMENT, "true");
+    }
+
+    function updateBadgeCounts() {
+      const savedCount = state.saved.length;
+      const cartCount = state.cart.length;
+
+      const savedBadge = document.getElementById("saved-badge-count");
+      if (savedBadge) {
+        savedBadge.textContent = savedCount;
+        savedBadge.classList.toggle("hidden", savedCount === 0);
+      }
+
+      const cartBadge = document.getElementById("cart-badge-count");
+      const mobileCartBadge = document.getElementById("mobile-cart-count");
+      if (cartBadge) {
+        cartBadge.textContent = cartCount;
+        cartBadge.classList.toggle("hidden", cartCount === 0);
+      }
+      if (mobileCartBadge) {
+        mobileCartBadge.textContent = cartCount;
+        mobileCartBadge.classList.toggle("hidden", cartCount === 0);
+      }
+
+      const mobileSavedBadge = document.getElementById("mobile-saved-count");
+      if (mobileSavedBadge) {
+        mobileSavedBadge.classList.toggle("hidden", savedCount === 0);
+      }
+    }
+
+    /* ==========================================================================
+       4. KEYBOARD SHORTCUTS & FLOATING OBSERVER
+       ========================================================================== */
+    function initKeyboardShortcuts() {
+      document.addEventListener("keydown", (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+          e.preventDefault();
+          openSearchModal();
+        }
+        if (e.key === "Escape") {
+          closeSearchModal();
+          closeQuickViewModal();
+          closeShareModal();
+          closeCartDrawer();
+        }
+      });
+    }
+
+    function initScrollObservers() {
+      const floating = document.getElementById("floating-controls");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          floating?.classList.remove("opacity-0", "pointer-events-none");
+          floating?.classList.add("opacity-100", "pointer-events-auto");
+        } else {
+          floating?.classList.add("opacity-0", "pointer-events-none");
+          floating?.classList.remove("opacity-100", "pointer-events-auto");
+        }
+      });
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    /* ==========================================================================
+       5. SPA ROUTER ENGINE & DYNAMIC SEO GENERATOR
+       ========================================================================== */
+    function router() {
+      const path = window.location.pathname;
+      const app = document.getElementById("app-router");
+      if (!app) return;
+
+      // Scroll to top on navigation
+      window.scrollTo(0, 0);
+
+      // Route Dispatcher
+      if (path === "/" || path === "") {
+        renderHomePage(app);
+      } else if (path === "/explore") {
+        renderExplorePage(app);
+      } else if (path === "/saved") {
+        renderSavedPage(app);
+      } else if (path.startsWith("/category/")) {
+        const slug = path.split("/category/")[1];
+        renderCategoryPage(app, slug);
+      } else if (path.startsWith("/product/")) {
+        const slug = path.split("/product/")[1];
+        renderProductDetailPage(app, slug);
+      } else if (path.startsWith("/post/")) {
+        const slug = path.split("/post/")[1];
+        renderPostDetailPage(app, slug);
+      } else {
+        render404Page(app);
+      }
+
+      // Re-initialize Lucide Icons for injected DOM elements
+      setTimeout(() => lucide.createIcons(), 50);
+    }
+
+    function updateSEO(title, description, canonicalUrl = window.location.href, jsonLdData = null) {
+      document.title = `${title} — Nexamart Superstore`;
+      document.getElementById("seo-title").textContent = `${title} — Nexamart Superstore`;
+      document.getElementById("seo-description")?.setAttribute("content", description);
+      document.getElementById("og-title")?.setAttribute("content", title);
+      document.getElementById("og-desc")?.setAttribute("content", description);
+      document.getElementById("seo-canonical")?.setAttribute("href", canonicalUrl);
+
+      if (jsonLdData) {
+        document.getElementById("json-ld-schema").textContent = JSON.stringify(jsonLdData);
+      }
+    }
+
+    /* ==========================================================================
+       6. PAGE RENDERERS: HOMEPAGE (ZERO GAP HERO & RICH DISCOVERY)
+       ========================================================================== */
+    function renderHomePage(container) {
+      updateSEO(
+        "Ultimate Digital Superstore & Discovery Platform",
+        "Discover verified AI tools, high-yield financial products, developer software, and daily tech insights on Nexamart.",
+        window.location.href,
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Nexamart",
+          "url": "https://nexamart.local/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://nexamart.local/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      );
+
+      container.innerHTML = `
+        <!-- HERO SECTION (Requirement 7: Zero top/left/right gap) -->
+        <section class="w-full bg-gradient-to-b from-gray-950 via-darkbg to-gray-950 border-b border-gray-800/60 pt-4 pb-6 px-4 sm:px-6 lg:px-8">
+          <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 py-4">
+            
+            <div class="flex-1 space-y-4 text-left">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-semibold">
+                <span>🚀 The Next-Gen Digital Superstore</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-ping"></span>
+              </div>
+              <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                Discover Apps, <span class="bg-gradient-to-r from-brand-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI Tools</span> & Tech Finance.
+              </h1>
+              <p class="text-xs sm:text-sm text-gray-400 max-w-xl leading-relaxed">
+                Nexamart curates verified software applications, generative AI suites, high-yield credit options, and expert technical post guides in a blazingly fast interface.
+              </p>
+              
+              <!-- Hero Quick Search Chips & CTA -->
+              <div class="pt-2 flex flex-wrap gap-3 items-center">
+                <a href="/explore" data-link class="bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs px-5 py-3 rounded-xl shadow-lg shadow-brand-600/30 transition-all flex items-center gap-2">
+                  <span>Explore Nexamart</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="/category/ai-tools" data-link class="bg-gray-900 border border-gray-700 hover:border-gray-600 text-gray-200 font-semibold text-xs px-5 py-3 rounded-xl transition-all flex items-center gap-2">
+                  <i data-lucide="cpu" class="w-4 h-4 text-purple-400"></i>
+                  <span>Browse AI Tools</span>
+                </a>
+              </div>
+
+              <!-- Real-time Stats Counter (Requirement 22) -->
+              <div class="pt-4 grid grid-cols-4 gap-2 border-t border-gray-800/80 max-w-lg text-left">
+                <div>
+                  <span class="text-base sm:text-lg font-extrabold text-white">${DB.products.length + 140}+</span>
+                  <p class="text-[10px] text-gray-500 font-medium uppercase">Products</p>
+                </div>
+                <div>
+                  <span class="text-base sm:text-lg font-extrabold text-purple-400">${DB.products.filter(p=>p.category==='ai-tools').length + 80}+</span>
+                  <p class="text-[10px] text-gray-500 font-medium uppercase">AI Tools</p>
+                </div>
+                <div>
+                  <span class="text-base sm:text-lg font-extrabold text-emerald-400">${DB.posts.length + 50}+</span>
+                  <p class="text-[10px] text-gray-500 font-medium uppercase">Post Guides</p>
+                </div>
+                <div>
+                  <span class="text-base sm:text-lg font-extrabold text-pink-400">${DB.categories.length}</span>
+                  <p class="text-[10px] text-gray-500 font-medium uppercase">Categories</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Graphic Banner / Interactive Preview Card -->
+            <div class="w-full md:w-96 glass-panel rounded-2xl p-4 border border-gray-800 shadow-2xl relative overflow-hidden group">
+              <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-500/20 rounded-full blur-2xl group-hover:bg-brand-500/30 transition-all"></div>
+              <div class="flex items-center justify-between border-b border-gray-800 pb-3 mb-3">
+                <span class="text-xs font-bold text-gray-400 flex items-center gap-1.5">
+                  <i data-lucide="sparkles" class="w-4 h-4 text-brand-400"></i> Featured Spotlight
+                </span>
+                <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded-full">VERIFIED</span>
+              </div>
+              <img src="${DB.products[0].image}" alt="Spotlight" class="w-full h-40 object-cover rounded-xl mb-3 shadow-md" />
+              <h3 class="font-bold text-white text-sm mb-1">${DB.products[0].title}</h3>
+              <p class="text-xs text-gray-400 line-clamp-2 mb-3">${DB.products[0].subtitle}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-bold text-white">$${DB.products[0].price.toFixed(2)} <span class="text-xs text-gray-500 line-through">$${DB.products[0].oldPrice.toFixed(2)}</span></span>
+                <a href="/product/${DB.products[0].slug}" data-link class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">View Details</a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- QUICK CATEGORY RAIL (Requirement 12) -->
+        <section class="w-full bg-gray-950 py-3 border-b border-gray-800/80 px-4">
+          <div class="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto no-scrollbar snap-x-mandatory">
+            ${DB.categories.map(cat => `
+              <a href="/category/${cat.id}" data-link class="snap-start shrink-0 flex items-center gap-2 bg-gray-900/90 hover:bg-gray-800 border border-gray-800 hover:border-brand-500/50 px-3.5 py-2 rounded-xl text-xs font-medium text-gray-300 transition-all">
+                <i data-lucide="${cat.icon}" class="w-4 h-4 text-brand-400"></i>
+                <span>${cat.name}</span>
+                <span class="bg-gray-800 text-gray-400 text-[10px] px-1.5 py-0.2 rounded-full font-mono">${cat.count}</span>
+              </a>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- AD ZONE 1 (Requirement 20) -->
+        <div class="max-w-7xl mx-auto px-4 my-6">
+          <div class="w-full bg-gray-900/40 border border-dashed border-gray-800 rounded-xl p-3 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest border border-gray-800 px-1.5 py-0.5 rounded">Advertisement</span>
+            <p class="text-gray-400 text-center sm:text-left">Accelerate your workflow with High-Speed Cloud Compute Nodes on Nexamart Cloud Partner Network.</p>
+            <button onclick="showToast('Ad Sponsor Link clicked')" class="bg-gray-800 hover:bg-gray-700 text-gray-200 px-3 py-1 rounded-lg font-medium text-[11px] shrink-0">Learn More</button>
+          </div>
+        </div>
+
+        <!-- MAIN HOMEPAGE SECTIONS CONTAINER -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 py-4">
+
+          <!-- SECTION 1: FEATURED PRODUCTS (HORIZONTAL SCROLLING RAIL) -->
+          <section>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                  <i data-lucide="flame" class="w-5 h-5 text-orange-500"></i> Featured Superstore Products
+                </h2>
+                <p class="text-xs text-gray-400">Hand-picked software and digital utilities with top ratings</p>
+              </div>
+              <a href="/explore" data-link class="text-xs font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
+                View All <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+            
+            <div class="flex gap-4 overflow-x-auto no-scrollbar snap-x-mandatory pb-2">
+              ${DB.products.map(product => renderProductCardHorizontal(product)).join('')}
+            </div>
+          </section>
+
+          <!-- SECTION 2: AI TOOLS DISCOVERY (2-COLUMN RESPONSIVE GRID - Requirement 15) -->
+          <section class="bg-gray-900/40 border border-gray-800/80 rounded-2xl p-6">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <span class="text-[10px] font-bold text-purple-400 uppercase tracking-widest">Generative Intelligence</span>
+                <h2 class="text-xl font-bold text-white">Top AI Discovery Hub</h2>
+              </div>
+              <a href="/category/ai-tools" data-link class="text-xs font-semibold text-purple-400 hover:underline">Explore All AI</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${DB.products.filter(p => p.category === 'ai-tools').map(p => renderProductCard2Column(p)).join('')}
+            </div>
+          </section>
+
+          <!-- SECTION 3: EXCLUSIVE DEALS REEL (Requirement 19) -->
+          <section class="bg-gradient-to-r from-pink-950/30 via-purple-950/20 to-gray-950 border border-pink-500/20 rounded-2xl p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <span class="text-[10px] font-bold text-pink-400 uppercase tracking-widest">Time-Sensitive Savings</span>
+                <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                  <i data-lucide="zap" class="w-5 h-5 text-pink-500"></i> Exclusive Digital Deals
+                </h2>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              ${DB.deals.map(deal => renderDealCard(deal)).join('')}
+            </div>
+          </section>
+
+          <!-- SECTION 4: FINANCIAL PICK DISCOVERY -->
+          <section class="bg-gray-900/40 border border-gray-800/80 rounded-2xl p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Fintech & Banking</span>
+                <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                  <i data-lucide="credit-card" class="w-5 h-5 text-emerald-400"></i> Financial Tools & Credit Cards
+                </h2>
+              </div>
+              <a href="/category/finance" data-link class="text-xs font-semibold text-emerald-400 hover:underline">View All Finance</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${DB.products.filter(p => p.category === 'finance').map(p => renderFinancialCard(p)).join('')}
+            </div>
+          </section>
+
+          <!-- SECTION 5: TRENDING POSTS & EDITORIAL GUIDE FEED (Requirement 23-28) -->
+          <section>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                  <i data-lucide="book-open" class="w-5 h-5 text-brand-400"></i> Trending Editorial Posts & Guides
+                </h2>
+                <p class="text-xs text-gray-400">Technical insights, software benchmarks, and financial comparisons</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              ${DB.posts.map(post => renderPostCard(post)).join('')}
+            </div>
+          </section>
+
+          <!-- SECTION 6: RECENTLY VIEWED RAIL (Requirement 76) -->
+          <section id="recently-viewed-section" class="${state.recent.length === 0 ? 'hidden' : ''}">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                <i data-lucide="clock" class="w-4 h-4 text-gray-400"></i> Recently Viewed
+              </h3>
+              <button onclick="clearRecentHistory()" class="text-[11px] text-gray-500 hover:text-white">Clear History</button>
+            </div>
+            <div id="recently-viewed-rail" class="flex gap-3 overflow-x-auto no-scrollbar snap-x-mandatory">
+              <!-- Dynamically rendered -->
+            </div>
+          </section>
+
+        </div>
+      `;
+
+      renderRecentlyViewedRail();
+    }
+
+    /* ==========================================================================
+       7. COMPONENT CARD RENDERING TEMPLATES
+       ========================================================================== */
+    function renderProductCardHorizontal(product) {
+      const isSaved = state.saved.includes(product.id);
+      return `
+        <div class="snap-start shrink-0 w-64 glass-panel border border-gray-800/80 hover:border-gray-700 rounded-2xl p-4 flex flex-col justify-between hover-scale group relative">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center text-xl shadow-inner">
+                ${product.icon}
+              </div>
+              <button onclick="toggleSaveItem('${product.id}')" class="p-1.5 text-gray-400 hover:text-brand-400 rounded-lg hover:bg-gray-800 transition-colors" aria-label="Bookmark">
+                <i data-lucide="bookmark" class="w-4 h-4 ${isSaved ? 'fill-brand-500 text-brand-500' : ''}"></i>
+              </button>
+            </div>
+            <span class="text-[10px] font-bold text-brand-400 uppercase tracking-widest">${product.subcategory}</span>
+            <h3 class="font-bold text-white text-sm line-clamp-1 mt-0.5 group-hover:text-brand-400 transition-colors">${product.title}</h3>
+            <p class="text-xs text-gray-400 line-clamp-2 mt-1 leading-normal">${product.subtitle}</p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-gray-800/60 flex items-center justify-between">
+            <div>
+              <span class="text-xs font-extrabold text-white">$${product.price.toFixed(2)}</span>
+              ${product.oldPrice > 0 ? `<span class="text-[10px] text-gray-500 line-through ml-1">$${product.oldPrice.toFixed(2)}</span>` : ''}
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button onclick="openQuickView('${product.id}')" class="px-2 py-1 bg-gray-800 hover:bg-gray-700 text-gray-300 text-[11px] font-medium rounded-lg transition-colors">Quick View</button>
+              <a href="/product/${product.slug}" data-link class="p-1 bg-brand-600 hover:bg-brand-500 text-white rounded-lg transition-colors"><i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderProductCard2Column(product) {
+      const isSaved = state.saved.includes(product.id);
+      return `
+        <div class="glass-panel border border-gray-800 hover:border-purple-500/40 rounded-xl p-4 flex gap-4 hover-scale group">
+          <div class="w-12 h-12 rounded-xl bg-purple-950/40 border border-purple-800/40 shrink-0 flex items-center justify-center text-2xl shadow-inner">
+            ${product.icon}
+          </div>
+          <div class="flex-grow min-w-0 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="font-bold text-white text-sm truncate group-hover:text-purple-400 transition-colors">${product.title}</h3>
+                <span class="text-[10px] font-mono bg-purple-500/20 text-purple-300 px-1.5 py-0.5 rounded shrink-0">${product.discount}</span>
+              </div>
+              <p class="text-xs text-gray-400 line-clamp-2 mt-1">${product.description}</p>
+            </div>
+            <div class="flex items-center justify-between mt-3 pt-2 border-t border-gray-800/60 text-xs">
+              <div class="flex items-center gap-2 text-gray-400 text-[11px]">
+                <span class="flex items-center gap-1 text-amber-400"><i data-lucide="star" class="w-3 h-3 fill-amber-400"></i> ${product.rating}</span>
+                <span>•</span>
+                <span>${product.views.toLocaleString()} views</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="toggleSaveItem('${product.id}')" class="p-1 text-gray-400 hover:text-white"><i data-lucide="bookmark" class="w-3.5 h-3.5 ${isSaved ? 'fill-brand-500 text-brand-500' : ''}"></i></button>
+                <a href="/product/${product.slug}" data-link class="bg-purple-600 hover:bg-purple-500 text-white font-semibold text-[11px] px-3 py-1 rounded-lg transition-colors">Access Tool</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderFinancialCard(product) {
+      return `
+        <div class="glass-panel border border-emerald-900/30 hover:border-emerald-500/40 rounded-xl p-4 flex flex-col justify-between hover-scale">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest border border-emerald-800/50 bg-emerald-950/40 px-2 py-0.5 rounded">${product.subcategory}</span>
+              <span class="text-xs text-gray-400 font-semibold">${product.developer}</span>
+            </div>
+            <h3 class="font-bold text-white text-base mb-1">${product.title}</h3>
+            <p class="text-xs text-gray-300 line-clamp-2 mb-3 leading-relaxed">${product.description}</p>
+            
+            <div class="bg-gray-950/60 rounded-lg p-2.5 space-y-1 text-xs mb-3">
+              <div class="flex items-center justify-between text-gray-400">
+                <span>Key Benefit:</span>
+                <span class="text-emerald-400 font-semibold">${product.pros[0]}</span>
+              </div>
+              <div class="flex items-center justify-between text-gray-400">
+                <span>Requirement:</span>
+                <span class="text-gray-200">${product.requirements[0]}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between border-t border-gray-800/80 pt-3">
+            <p class="text-[10px] text-gray-500 italic max-w-[200px]">Discovery listing. Direct partner terms apply.</p>
+            <a href="/product/${product.slug}" data-link class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1">
+              <span>View Offers</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderDealCard(deal) {
+      return `
+        <div class="glass-panel border border-pink-500/20 hover:border-pink-500/50 rounded-xl p-4 flex flex-col justify-between hover-scale relative overflow-hidden">
+          <div class="absolute top-2 right-2 bg-pink-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow">
+            ${deal.badge}
+          </div>
+          <div>
+            <img src="${deal.image}" alt="${deal.title}" class="w-full h-28 object-cover rounded-lg mb-3" />
+            <h3 class="font-bold text-white text-xs line-clamp-1 mb-1">${deal.title}</h3>
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-lg font-extrabold text-pink-400">$${deal.currentPrice.toFixed(2)}</span>
+              <span class="text-xs text-gray-500 line-through">$${deal.oldPrice.toFixed(2)}</span>
+              <span class="text-[10px] font-bold text-emerald-400">${deal.discount}</span>
+            </div>
+          </div>
+          <div class="border-t border-gray-800/60 pt-3 flex items-center justify-between">
+            <span class="text-[10px] text-gray-400 flex items-center gap-1 font-mono">
+              <i data-lucide="clock" class="w-3 h-3 text-pink-400"></i> ${deal.expiryHours}h remaining
+            </span>
+            <button onclick="addToCart('${deal.id}', 'deal')" class="bg-pink-600 hover:bg-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-lg transition-colors">
+              Claim Deal
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderPostCard(post) {
+      const isLiked = state.likes.includes(post.id);
+      return `
+        <article class="glass-panel border border-gray-800 hover:border-gray-700 rounded-2xl overflow-hidden flex flex-col justify-between hover-scale group">
+          <div>
+            <div class="relative">
+              <img src="${post.coverImage}" alt="${post.title}" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-3 left-3 bg-gray-950/80 backdrop-blur-md text-brand-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-gray-800">
+                ${post.category}
+              </span>
+            </div>
+            <div class="p-4 space-y-2">
+              <div class="flex items-center gap-2 text-[11px] text-gray-400">
+                <span>${post.date}</span>
+                <span>•</span>
+                <span>${post.readingTime}</span>
+                <span>•</span>
+                <span class="text-brand-400 font-semibold">${post.views} views</span>
+              </div>
+              <h3 class="font-bold text-white text-base line-clamp-2 leading-snug group-hover:text-brand-400 transition-colors">
+                <a href="/post/${post.slug}" data-link>${post.title}</a>
+              </h3>
+              <p class="text-xs text-gray-400 line-clamp-2 leading-relaxed">${post.excerpt}</p>
+            </div>
+          </div>
+
+          <div class="px-4 pb-4 pt-2 border-t border-gray-800/60 flex items-center justify-between text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <img src="${post.authorAvatar}" alt="${post.author}" class="w-5 h-5 rounded-full object-cover" />
+              <span class="text-[11px] font-medium text-gray-300">${post.author}</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <button onclick="toggleLikePost('${post.id}')" class="flex items-center gap-1 hover:text-pink-400 transition-colors" aria-label="Like">
+                <i data-lucide="heart" class="w-4 h-4 ${isLiked ? 'fill-pink-500 text-pink-500' : ''}"></i>
+                <span class="text-[11px]">${post.likes + (isLiked ? 1 : 0)}</span>
+              </button>
+              <button onclick="openShareModal('${post.title}', '${window.location.origin}/post/${post.slug}')" class="hover:text-white" aria-label="Share">
+                <i data-lucide="share-2" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    /* ==========================================================================
+       8. PAGE RENDERERS: EXPLORE & CATEGORY & SAVED
+       ========================================================================== */
+    function renderExplorePage(container) {
+      updateSEO("Explore Discovery Feed — Nexamart", "Explore top trending applications, AI productivity tools, and editorial posts.");
+
+      container.innerHTML = `
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white">Discovery Feed & Directory</h1>
+            <p class="text-xs sm:text-sm text-gray-400 mt-1">Filter across our entire ecosystem of tools, posts, and deals.</p>
+          </div>
+
+          <!-- Quick Filter Pills -->
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2">
+            <button onclick="filterExplore('all')" class="bg-brand-600 text-white px-4 py-1.5 rounded-xl text-xs font-semibold shrink-0">All Items</button>
+            <button onclick="filterExplore('ai-tools')" class="bg-gray-900 border border-gray-800 text-gray-300 hover:text-white px-4 py-1.5 rounded-xl text-xs font-semibold shrink-0">AI Tools</button>
+            <button onclick="filterExplore('software')" class="bg-gray-900 border border-gray-800 text-gray-300 hover:text-white px-4 py-1.5 rounded-xl text-xs font-semibold shrink-0">Software</button>
+            <button onclick="filterExplore('finance')" class="bg-gray-900 border border-gray-800 text-gray-300 hover:text-white px-4 py-1.5 rounded-xl text-xs font-semibold shrink-0">Finance</button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="explore-grid-target">
+            ${DB.products.map(p => renderProductCardHorizontal(p)).join('')}
+            ${DB.posts.map(post => renderPostCard(post)).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderCategoryPage(container, slug) {
+      const category = DB.categories.find(c => c.id === slug) || { name: slug, desc: "Digital directory listings." };
+      const products = DB.products.filter(p => p.category === slug);
+      const posts = DB.posts.filter(p => p.category === slug);
+
+      updateSEO(`${category.name} Category — Nexamart`, category.desc);
+
+      container.innerHTML = `
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+          <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-6">
+            <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Category Hub</span>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">${category.name}</h1>
+            <p class="text-xs sm:text-sm text-gray-400 mt-2 max-w-xl">${category.desc}</p>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-lg font-bold text-white">Products in ${category.name} (${products.length})</h2>
+            ${products.length > 0 ? `
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                ${products.map(p => renderProductCard2Column(p)).join('')}
+              </div>
+            ` : `<p class="text-xs text-gray-500">No software items currently listed in this category.</p>`}
+          </div>
+
+          <div class="space-y-6 pt-4">
+            <h2 class="text-lg font-bold text-white">Articles & Guides (${posts.length})</h2>
+            ${posts.length > 0 ? `
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                ${posts.map(post => renderPostCard(post)).join('')}
+              </div>
+            ` : `<p class="text-xs text-gray-500">No editorial posts matching this category yet.</p>`}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSavedPage(container) {
+      updateSEO("Saved Bookmarks — Nexamart", "Your bookmarked software, tools, and guides.");
+
+      const savedProducts = DB.products.filter(p => state.saved.includes(p.id));
+
+      container.innerHTML = `
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+          <div class="flex items-center justify-between border-b border-gray-800 pb-4">
+            <div>
+              <h1 class="text-2xl font-extrabold text-white">Saved Bookmarks</h1>
+              <p class="text-xs text-gray-400 mt-1">Manage your locally saved tools and articles.</p>
+            </div>
+            ${savedProducts.length > 0 ? `<button onclick="clearAllSaved()" class="text-xs text-pink-400 hover:underline">Clear All</button>` : ''}
+          </div>
+
+          ${savedProducts.length > 0 ? `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${savedProducts.map(p => renderProductCard2Column(p)).join('')}
+            </div>
+          ` : `
+            <div class="text-center py-16 space-y-3">
+              <i data-lucide="bookmark" class="w-12 h-12 text-gray-600 mx-auto"></i>
+              <h3 class="text-base font-bold text-white">No saved items yet</h3>
+              <p class="text-xs text-gray-400">Click the bookmark icon on any product or article to store it here.</p>
+              <a href="/explore" data-link class="inline-block bg-brand-600 text-white text-xs font-semibold px-4 py-2 rounded-xl">Explore Directory</a>
+            </div>
+          `}
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       9. PAGE RENDERERS: PRODUCT DETAIL PAGE (Requirement 33 & 34)
+       ========================================================================== */
+    function renderProductDetailPage(container, slug) {
+      const product = DB.products.find(p => p.slug === slug);
+      if (!product) {
+        render404Page(container);
+        return;
+      }
+
+      // Track recently viewed
+      trackRecentlyViewed(product.id, 'product');
+
+      updateSEO(
+        `${product.title} — ${product.subtitle}`,
+        product.description,
+        window.location.href,
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": product.title,
+          "operatingSystem": product.platforms.join(", "),
+          "applicationCategory": product.category,
+          "offers": {
+            "@type": "Offer",
+            "price": product.price,
+            "priceCurrency": "USD"
+          }
+        }
+      );
+
+      const isSaved = state.saved.includes(product.id);
+
+      container.innerHTML = `
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+          
+          <!-- Breadcrumbs -->
+          <nav class="flex items-center gap-2 text-xs text-gray-400">
+            <a href="/" data-link class="hover:text-white">Home</a>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            <a href="/category/${product.category}" data-link class="hover:text-white uppercase font-semibold">${product.category}</a>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            <span class="text-gray-200 truncate">${product.title}</span>
+          </nav>
+
+          <!-- Main Product Header Card -->
+          <div class="glass-panel border border-gray-800 rounded-2xl p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center text-3xl shadow-lg shrink-0">
+                  ${product.icon}
+                </div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">${product.subcategory}</span>
+                    <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded-full">VERIFIED</span>
+                  </div>
+                  <h1 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">${product.title}</h1>
+                  <p class="text-xs sm:text-sm text-gray-400 mt-1">${product.subtitle}</p>
+                </div>
+              </div>
+
+              <p class="text-xs sm:text-sm text-gray-300 leading-relaxed pt-2">${product.description}</p>
+
+              <!-- Pros & Considerations -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-gray-800">
+                <div class="bg-emerald-950/20 border border-emerald-900/40 rounded-xl p-3 space-y-1 text-xs">
+                  <span class="font-bold text-emerald-400 flex items-center gap-1"><i data-lucide="check-circle" class="w-4 h-4"></i> Highlights</span>
+                  <ul class="list-disc list-inside text-gray-300 space-y-1 pt-1">
+                    ${product.pros.map(pro => `<li>${pro}</li>`).join('')}
+                  </ul>
+                </div>
+                <div class="bg-amber-950/20 border border-amber-900/40 rounded-xl p-3 space-y-1 text-xs">
+                  <span class="font-bold text-amber-400 flex items-center gap-1"><i data-lucide="alert-circle" class="w-4 h-4"></i> Considerations</span>
+                  <ul class="list-disc list-inside text-gray-300 space-y-1 pt-1">
+                    ${product.cons.map(con => `<li>${con}</li>`).join('')}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sticky Sidebar Action Box -->
+            <div class="bg-gray-950/80 border border-gray-800 rounded-xl p-5 space-y-5 flex flex-col justify-between">
+              <div class="space-y-4">
+                <div class="flex items-baseline justify-between">
+                  <span class="text-2xl font-extrabold text-white">$${product.price.toFixed(2)}</span>
+                  ${product.oldPrice > 0 ? `<span class="text-xs text-gray-500 line-through">$${product.oldPrice.toFixed(2)}</span>` : ''}
+                </div>
+
+                <div class="space-y-2 text-xs text-gray-400">
+                  <div class="flex justify-between"><span>Developer:</span><span class="text-white font-medium">${product.developer}</span></div>
+                  <div class="flex justify-between"><span>Platforms:</span><span class="text-white font-medium">${product.platforms.join(', ')}</span></div>
+                  <div class="flex justify-between"><span>Rating:</span><span class="text-amber-400 font-bold flex items-center gap-1"><i data-lucide="star" class="w-3 h-3 fill-amber-400"></i> ${product.rating} (${product.reviews})</span></div>
+                </div>
+              </div>
+
+              <div class="space-y-2 pt-4 border-t border-gray-800">
+                <button onclick="addToCart('${product.id}', 'product')" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-semibold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center gap-2">
+                  <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Cart / Access
+                </button>
+                <div class="flex gap-2">
+                  <button onclick="toggleSaveItem('${product.id}')" class="flex-1 bg-gray-900 border border-gray-800 hover:bg-gray-800 text-gray-300 py-2 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5">
+                    <i data-lucide="bookmark" class="w-4 h-4 ${isSaved ? 'fill-brand-500 text-brand-500' : ''}"></i> ${isSaved ? 'Saved' : 'Save'}
+                  </button>
+                  <button onclick="openShareModal('${product.title}', '${window.location.href}')" class="p-2 bg-gray-900 border border-gray-800 hover:bg-gray-800 text-gray-300 rounded-xl text-xs">
+                    <i data-lucide="share-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Products Section -->
+          <div class="space-y-4 pt-6">
+            <h3 class="text-lg font-bold text-white">Related Directory Products</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${DB.products.filter(p => p.id !== product.id).slice(0, 2).map(p => renderProductCard2Column(p)).join('')}
+            </div>
+          </div>
+
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       10. PAGE RENDERERS: POST DETAIL PAGE (Requirement 30 & 85 - Content Reading)
+       ========================================================================== */
+    function renderPostDetailPage(container, slug) {
+      const post = DB.posts.find(p => p.slug === slug);
+      if (!post) {
+        render404Page(container);
+        return;
+      }
+
+      // Track view history
+      trackRecentlyViewed(post.id, 'post');
+
+      updateSEO(
+        post.title,
+        post.excerpt,
+        window.location.href,
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": post.title,
+          "author": { "@type": "Person", "name": post.author },
+          "datePublished": post.date,
+          "image": post.coverImage
+        }
+      );
+
+      const isLiked = state.likes.includes(post.id);
+
+      container.innerHTML = `
+        <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+          
+          <!-- Breadcrumbs -->
+          <nav class="flex items-center gap-2 text-xs text-gray-400">
+            <a href="/" data-link class="hover:text-white">Home</a>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            <a href="/category/${post.category}" data-link class="hover:text-white uppercase font-semibold">${post.category}</a>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            <span class="text-gray-200 truncate">${post.title}</span>
+          </nav>
+
+          <!-- Post Header -->
+          <div class="max-w-3xl space-y-4">
+            <span class="text-xs font-bold text-brand-400 uppercase tracking-widest border border-brand-500/30 px-2.5 py-1 rounded-full bg-brand-500/10">
+              ${post.category}
+            </span>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">${post.title}</h1>
+            <p class="text-sm sm:text-base text-gray-300 leading-relaxed">${post.excerpt}</p>
+
+            <div class="flex items-center justify-between border-y border-gray-800 py-3 text-xs text-gray-400">
+              <div class="flex items-center gap-3">
+                <img src="${post.authorAvatar}" alt="${post.author}" class="w-8 h-8 rounded-full object-cover" />
+                <div>
+                  <p class="font-bold text-white">${post.author}</p>
+                  <p class="text-[10px] text-gray-500">${post.date} • ${post.readingTime}</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <button onclick="toggleLikePost('${post.id}')" class="flex items-center gap-1.5 text-gray-300 hover:text-pink-400 transition-colors">
+                  <i data-lucide="heart" class="w-4 h-4 ${isLiked ? 'fill-pink-500 text-pink-500' : ''}"></i>
+                  <span>${post.likes + (isLiked ? 1 : 0)}</span>
+                </button>
+                <button onclick="openShareModal('${post.title}', '${window.location.href}')" class="p-1.5 text-gray-300 hover:text-white">
+                  <i data-lucide="share-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Image -->
+          <div class="w-full max-w-4xl rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
+            <img src="${post.coverImage}" alt="${post.title}" class="w-full h-auto max-h-[450px] object-cover" />
+          </div>
+
+          <!-- Article Content Body (Requirement 85: 65-75ch Reading Width) -->
+          <div class="prose-custom text-gray-300 text-sm sm:text-base leading-relaxed space-y-4">
+            ${post.content}
+          </div>
+
+          <!-- Related Posts Carousel/Grid (Requirement 29) -->
+          <div class="border-t border-gray-800 pt-8 space-y-4">
+            <h3 class="text-lg font-bold text-white">Related Technical Guides</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              ${DB.posts.filter(p => p.id !== post.id).slice(0, 2).map(p => renderPostCard(p)).join('')}
+            </div>
+          </div>
+
+        </article>
+      `;
+    }
+
+    /* ==========================================================================
+       11. PAGE RENDERERS: 404 STATE (Requirement 62)
+       ========================================================================== */
+    function render404Page(container) {
+      updateSEO("Page Not Found — Nexamart", "The requested route does not exist.");
+
+      container.innerHTML = `
+        <div class="max-w-2xl mx-auto text-center py-20 px-4 space-y-6">
+          <div class="w-20 h-20 bg-brand-500/10 border border-brand-500/20 text-brand-400 rounded-3xl flex items-center justify-center text-4xl mx-auto shadow-2xl">
+            404
+          </div>
+          <h1 class="text-3xl font-extrabold text-white">Route Not Found</h1>
+          <p class="text-xs sm:text-sm text-gray-400 max-w-md mx-auto">
+            The requested application or post page could not be located in our directory index.
+          </p>
+          <div class="flex justify-center gap-3">
+            <a href="/" data-link class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-5 py-2.5 rounded-xl transition-colors">Return Home</a>
+            <a href="/explore" data-link class="bg-gray-900 border border-gray-800 text-gray-300 text-xs font-semibold px-5 py-2.5 rounded-xl">Browse All</a>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       12. INTERACTIVE MODAL & UTILITY FUNCTIONS
+       ========================================================================== */
+    function openSearchModal() {
+      const modal = document.getElementById("search-modal");
+      if (modal) {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.getElementById("search-input")?.focus();
+      }
+    }
+
+    function closeSearchModal() {
+      const modal = document.getElementById("search-modal");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    }
+
+    function handleSearchInput(query) {
+      const resultsContainer = document.getElementById("search-results-list");
+      const intentBar = document.getElementById("search-intent-bar");
+      const intentTags = document.getElementById("intent-tags");
+
+      if (!query.trim()) {
+        resultsContainer.innerHTML = `<p class="text-gray-500 text-center py-8">Type keywords above to search across software, AI tools, fintech, and posts...</p>`;
+        intentBar.classList.add("hidden");
+        return;
+      }
+
+      const q = query.toLowerCase();
+
+      // Simple AI Intent Mapping Engine (Requirement 38)
+      let detectedIntents = [];
+      if (q.includes("loan") || q.includes("card") || q.includes("money") || q.includes("bank")) detectedIntents.push("Fintech & Loans");
+      if (q.includes("ai") || q.includes("writer") || q.includes("image") || q.includes("gpt")) detectedIntents.push("Generative AI");
+      if (q.includes("free") || q.includes("deal") || q.includes("code") || q.includes("dev")) detectedIntents.push("Developer Utilities");
+
+      if (detectedIntents.length > 0) {
+        intentBar.classList.remove("hidden");
+        intentBar.classList.add("flex");
+        intentTags.innerHTML = detectedIntents.map(i => `<span class="bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded text-[10px] font-bold">${i}</span>`).join('');
+      } else {
+        intentBar.classList.add("hidden");
+      }
+
+      // Filter products & posts
+      const matchedProducts = DB.products.filter(p => p.title.toLowerCase().includes(q) || p.tags.some(t => t.includes(q)));
+      const matchedPosts = DB.posts.filter(p => p.title.toLowerCase().includes(q) || p.tags.some(t => t.includes(q)));
+
+      if (matchedProducts.length === 0 && matchedPosts.length === 0) {
+        resultsContainer.innerHTML = `<p class="text-gray-400 text-center py-8">No results matching "${query}". Try searching "AI", "Credit", or "Code".</p>`;
+        return;
+      }
+
+      resultsContainer.innerHTML = `
+        <div class="space-y-4">
+          ${matchedProducts.length > 0 ? `
+            <div>
+              <h4 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Matching Products (${matchedProducts.length})</h4>
+              <div class="space-y-2">
+                ${matchedProducts.map(p => `
+                  <a href="/product/${p.slug}" onclick="closeSearchModal()" data-link class="flex items-center gap-3 p-2 bg-gray-950/60 hover:bg-gray-800 rounded-xl transition-colors">
+                    <span class="text-xl">${p.icon}</span>
+                    <div>
+                      <p class="font-bold text-white">${p.title}</p>
+                      <p class="text-[10px] text-gray-400">${p.subtitle}</p>
+                    </div>
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          ${matchedPosts.length > 0 ? `
+            <div>
+              <h4 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Matching Guides (${matchedPosts.length})</h4>
+              <div class="space-y-2">
+                ${matchedPosts.map(post => `
+                  <a href="/post/${post.slug}" onclick="closeSearchModal()" data-link class="flex items-center gap-3 p-2 bg-gray-950/60 hover:bg-gray-800 rounded-xl transition-colors">
+                    <i data-lucide="file-text" class="w-4 h-4 text-brand-400"></i>
+                    <div>
+                      <p class="font-bold text-white">${post.title}</p>
+                      <p class="text-[10px] text-gray-400">${post.readingTime} • ${post.category}</p>
+                    </div>
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      `;
+
+      lucide.createIcons();
+    }
+
+    function openQuickView(productId) {
+      const product = DB.products.find(p => p.id === productId);
+      if (!product) return;
+
+      const modal = document.getElementById("quickview-modal");
+      const content = document.getElementById("quickview-content");
+
+      content.innerHTML = `
+        <button onclick="closeQuickViewModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">${product.icon}</span>
+          <div>
+            <h3 class="font-bold text-white text-lg">${product.title}</h3>
+            <span class="text-xs text-brand-400 font-semibold uppercase">${product.category}</span>
+          </div>
+        </div>
+        <p class="text-xs text-gray-300 leading-relaxed mb-4">${product.description}</p>
+        <div class="flex items-center justify-between border-t border-gray-800 pt-4">
+          <span class="text-lg font-extrabold text-white">$${product.price.toFixed(2)}</span>
+          <a href="/product/${product.slug}" onclick="closeQuickViewModal()" data-link class="bg-brand-600 text-white text-xs font-semibold px-4 py-2 rounded-xl">View Full Details</a>
+        </div>
+      `;
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      lucide.createIcons();
+    }
+
+    function closeQuickViewModal() {
+      const modal = document.getElementById("quickview-modal");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    }
+
+    function openShareModal(title = "Nexamart Superstore", url = window.location.href) {
+      window.currentShareData = { title, url };
+      document.getElementById("share-modal-title").textContent = `Share "${title}":`;
+      const modal = document.getElementById("share-modal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeShareModal() {
+      const modal = document.getElementById("share-modal");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    }
+
+    function shareVia(platform) {
+      const { title, url } = window.currentShareData || { title: "Nexamart", url: window.location.href };
+      let shareUrl = "";
+
+      if (platform === "whatsapp") shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(title + " " + url)}`;
+      if (platform === "twitter") shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+      if (platform === "telegram") shareUrl = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
+
+      if (shareUrl) window.open(shareUrl, "_blank");
+      closeShareModal();
+    }
+
+    function copyCurrentLink() {
+      const url = window.currentShareData?.url || window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        showToast("Link copied to clipboard!");
+        closeShareModal();
+      });
+    }
+
+    /* Cart & Save System Engine */
+    function toggleSaveItem(id) {
+      if (state.saved.includes(id)) {
+        state.saved = state.saved.filter(item => item !== id);
+        showToast("Removed from Saved");
+      } else {
+        state.saved.push(id);
+        showToast("Saved to Bookmarks!");
+      }
+      setStorage(STORAGE_KEYS.SAVED, state.saved);
+      updateBadgeCounts();
+      router();
+    }
+
+    function toggleLikePost(id) {
+      if (state.likes.includes(id)) {
+        state.likes = state.likes.filter(item => item !== id);
+      } else {
+        state.likes.push(id);
+        showToast("Liked post!");
+      }
+      setStorage(STORAGE_KEYS.LIKES, state.likes);
+      router();
+    }
+
+    function addToCart(id, type) {
+      const existing = state.cart.find(i => i.id === id);
+      if (!existing) {
+        state.cart.push({ id, type });
+        showToast("Added to Cart!");
+      } else {
+        showToast("Item already in Cart!");
+      }
+      setStorage(STORAGE_KEYS.CART, state.cart);
+      updateBadgeCounts();
+    }
+
+    function openCartDrawer() {
+      const drawer = document.getElementById("cart-drawer");
+      const container = document.getElementById("cart-items-container");
+      const subtotalEl = document.getElementById("cart-subtotal");
+
+      if (state.cart.length === 0) {
+        container.innerHTML = `<p class="text-xs text-gray-500 text-center py-8">Your cart is currently empty.</p>`;
+        subtotalEl.textContent = "$0.00";
+      } else {
+        let total = 0;
+        container.innerHTML = state.cart.map(item => {
+          const prod = DB.products.find(p => p.id === item.id) || DB.deals.find(d => d.id === item.id);
+          const price = prod.price || prod.currentPrice || 0;
+          total += price;
+          return `
+            <div class="flex items-center justify-between p-2 bg-gray-950/60 border border-gray-800 rounded-xl text-xs">
+              <div>
+                <p class="font-bold text-white">${prod.title}</p>
+                <p class="text-[10px] text-brand-400">$${price.toFixed(2)}</p>
+              </div>
+              <button onclick="removeFromCart('${item.id}')" class="text-pink-400 hover:text-pink-300 p-1"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+            </div>
+          `;
+        }).join('');
+        subtotalEl.textContent = `$${total.toFixed(2)}`;
+      }
+
+      drawer.classList.remove("hidden");
+      drawer.classList.add("flex");
+      lucide.createIcons();
+    }
+
+    function closeCartDrawer() {
+      const drawer = document.getElementById("cart-drawer");
+      if (drawer) {
+        drawer.classList.add("hidden");
+        drawer.classList.remove("flex");
+      }
+    }
+
+    function removeFromCart(id) {
+      state.cart = state.cart.filter(i => i.id !== id);
+      setStorage(STORAGE_KEYS.CART, state.cart);
+      updateBadgeCounts();
+      openCartDrawer();
+    }
+
+    function clearAllSaved() {
+      state.saved = [];
+      setStorage(STORAGE_KEYS.SAVED, state.saved);
+      updateBadgeCounts();
+      router();
+    }
+
+    /* History Tracking */
+    function trackRecentlyViewed(id, type) {
+      state.recent = state.recent.filter(r => r.id !== id);
+      state.recent.unshift({ id, type });
+      if (state.recent.length > 20) state.recent.pop();
+      setStorage(STORAGE_KEYS.RECENT, state.recent);
+    }
+
+    function renderRecentlyViewedRail() {
+      const rail = document.getElementById("recently-viewed-rail");
+      if (!rail || state.recent.length === 0) return;
+
+      rail.innerHTML = state.recent.map(r => {
+        const item = DB.products.find(p => p.id === r.id) || DB.posts.find(p => p.id === r.id);
+        if (!item) return '';
+        return `
+          <a href="/${r.type}/${item.slug}" data-link class="snap-start shrink-0 w-48 bg-gray-900 border border-gray-800 p-2.5 rounded-xl hover:border-brand-500/50 transition-colors">
+            <p class="text-xs font-bold text-white line-clamp-1">${item.title}</p>
+            <span class="text-[10px] text-gray-500 uppercase">${r.type}</span>
+          </a>
+        `;
+      }).join('');
+    }
+
+    function clearRecentHistory() {
+      state.recent = [];
+      setStorage(STORAGE_KEYS.RECENT, []);
+      document.getElementById("recently-viewed-section")?.classList.add("hidden");
+      showToast("History cleared");
+    }
+
+    /* Homepage Dynamic FAQ Accordion Engine */
+    function renderGlobalFAQs() {
+      const container = document.getElementById("faq-accordion-list");
+      if (!container) return;
+
+      container.innerHTML = DB.faqs.map((faq, idx) => `
+        <div class="bg-gray-900/60 border border-gray-800 rounded-xl overflow-hidden">
+          <button onclick="toggleFAQ(${idx})" class="w-full p-4 text-left font-semibold text-xs sm:text-sm text-white flex justify-between items-center focus:outline-none">
+            <span>${faq.q}</span>
+            <i data-lucide="chevron-down" id="faq-icon-${idx}" class="w-4 h-4 text-gray-400 transition-transform"></i>
+          </button>
+          <div id="faq-ans-${idx}" class="hidden px-4 pb-4 text-xs text-gray-400 leading-relaxed border-t border-gray-800/40 pt-2">
+            ${faq.a}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleFAQ(idx) {
+      const ans = document.getElementById(`faq-ans-${idx}`);
+      const icon = document.getElementById(`faq-icon-${idx}`);
+      if (ans) {
+        ans.classList.toggle("hidden");
+        icon?.classList.toggle("rotate-180");
+      }
+    }
+
+    /* Toast Notification System */
+    function showToast(msg) {
+      const container = document.getElementById("toast-container");
+      if (!container) return;
+
+      const toast = document.createElement("div");
+      toast.className = "bg-brand-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-2xl transition-all duration-300 transform translate-y-2 opacity-0 flex items-center gap-2";
+      toast.innerHTML = `<i data-lucide="check-circle" class="w-4 h-4"></i><span>${msg}</span>`;
+
+      container.appendChild(toast);
+      lucide.createIcons();
+
+      setTimeout(() => {
+        toast.classList.remove("translate-y-2", "opacity-0");
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.add("opacity-0");
+        setTimeout(() => toast.remove(), 300);
+      }, 2500);
+    }
+  </script>
 </body>
 </html>
