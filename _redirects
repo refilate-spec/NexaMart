@@ -1,3 +1,0 @@
-# Cloudflare Pages SPA fallback — 200 rewrite, not a redirect.
-# Keep one catch-all rule at the end so direct route refreshes work.
-/* /index.html 200
