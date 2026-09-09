@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /saved
+Disallow: /search?
+Sitemap: https://example.com/sitemap.xml

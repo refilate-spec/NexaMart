@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="color-scheme" content="dark light">
+  <title>NexaMart — Discover apps, tools, deals & digital resources</title>
+  <meta name="description" content="Discover software, apps, AI tools, finance resources, deals, templates and useful digital content.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://example.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NexaMart — Digital discovery platform">
+  <meta property="og:description" content="Discover better apps, tools, deals & digital resources.">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NexaMart — Digital discovery platform">
+  <meta name="twitter:description" content="Discover better apps, tools, deals & digital resources.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237c5cff'/%3E%3Cpath d='M18 45V19h28v9H28v4h14v8H28v5z' fill='white'/%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: { extend: { colors: { brand: { 500: '#7c5cff', 600: '#6544ef' }, mint: { 500: '#26d3bd' } }, boxShadow: { soft: '0 18px 60px rgba(0,0,0,.16)' } } }
+    };
+  </script>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json" id="schema-json">{}</script>
+</head>
+<body>
+  <div id="app" class="min-h-screen"></div>
+
+  <div id="toast-root" class="fixed inset-x-3 bottom-20 md:bottom-5 z-[100] flex flex-col items-center gap-2 pointer-events-none" aria-live="polite" aria-atomic="true"></div>
+
+  <div id="modal-root" class="hidden fixed inset-0 z-[90] overlay items-end md:items-center justify-center p-0 md:p-5" aria-hidden="true"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js" defer></script>
+  <script src="/data.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
